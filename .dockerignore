@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+.git
+.env
+ 
+# Kenapa penting?
+# node_modules laptop Anda
+# dibangun untuk OS Anda.
+# Kalau ikut tersalin ke image
+# Linux, aplikasi bisa gagal.
+# Bonus: build jauh lebih cepat.
