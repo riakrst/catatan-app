@@ -1,0 +1,20 @@
+services:
+  app:
+    build: . # bangun dari Dockerfile di sini
+    image: catatan-app:1.0
+    ports:
+      - '8081:3000' # host:container
+    environment:
+      MONGO_URL: mongodb://mongo:27017
+    depends_on:
+      - mongo # mongo dinyalakan lebih dulu
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db # data selamat meski container dihapus
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
